@@ -1,0 +1,11 @@
+﻿@model BlogTemporario.Models.Message
+
+<h2>Editar Mensagem</h2>
+
+<form asp-action="Update" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input type="text" name="content" value="@Model.Content" required />
+    <button type="submit">Atualizar</button>
+</form>
+
+<a asp-action="Index">Voltar</a>

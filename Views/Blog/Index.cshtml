@@ -1,0 +1,19 @@
+﻿@model List<BlogTemporario.Models.Message>
+
+<h1>Blog Temporário</h1>
+
+<form asp-action="Add" method="post">
+    <input type="text" name="content" placeholder="Escreva uma mensagem" required />
+    <button type="submit">Adicionar</button>
+</form>
+
+<ul>
+    @foreach (var message in Model)
+    {
+        <li>
+            @message.Content
+            <a asp-action="Edit" asp-route-id="@message.Id">Editar</a> |
+            <a asp-action="Delete" asp-route-id="@message.Id">Apagar</a>
+        </li>
+    }
+</ul>
